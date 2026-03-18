@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stopwatch App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1 id="title">Stopwatch</h1>
+
+    <div class="mode">
+        <label>
+            Mode:
+            <select id="modeSelect" onchange="onModeChange()">
+                <option value="stopwatch">Stopwatch</option>
+                <option value="countdown">Countdown</option>
+            </select>
+        </label>
+    </div>
+
+    <div id="countdownInput" class="countdown-input hidden">
+        <label>Set time:</label>
+        <input type="number" id="cdHours" min="0" max="23" value="0"> :
+        <input type="number" id="cdMinutes" min="0" max="59" value="0"> :
+        <input type="number" id="cdSeconds" min="0" max="59" value="10">
+        <button id="setCountdown" onclick="setCountdown()">Set</button>
+    </div>
+
+    <div id="display">00:00:00</div>
+
+    <div class="buttons">
+        <button id="startBtn" onclick="start()">Start</button>
+        <button id="pauseBtn" onclick="pause()">Pause</button>
+        <button onclick="reset()">Reset</button>
+        <button onclick="lap()" id="lapBtn">Lap</button>
+        <button onclick="clearLaps()">Clear Laps</button>
+        <button onclick="saveLaps()">Save Laps</button>
+        <button onclick="toggleSound()" id="soundBtn">🔈 Sound</button>
+    </div>
+
+    <ul id="laps"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
